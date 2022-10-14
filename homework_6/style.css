@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
+       url('./fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --c-main: #590BFF;
+  --c-text: #000000;
+  --c-accent: #FF710B;
+  --c-title: #FFFFFF;
+  --c-border: #C4C4C4;
+  --font-sizing-title: 54px;
+  --font-sizing-menu: 28px;
+  --font-sizing-link: 24px;
+  --font-sizing-card: 28px;
+  --font-sizing-list: 28px;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--font-sizing-title);
+}
+
+h2 {
+  font-size: var(--font-sizing-menu);
+}
+
+a {
+  color: var(--c-accent);
+}
+
+a:hover {
+  color: var(--c-main);
+}
+
+.container {
+  width: 100%;
+  max-width: 2560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 29px;
+  color: var(--c-title);
+  background-color: var(--c-main);
+}
+
+.content {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.content__inner {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 50px;
+}
+
+.content__aside {
+  margin-top: 49px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-right: 20px;
+  border-right: 2px solid var(--c-border);
+  height: 451px;
+}
+
+.menu {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.menu__title:not(:last-child) {
+  margin-bottom: 23px;
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.menu__item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.menu__link {
+  font-size: var(--font-sizing-link);
+}
+
+.content__body {
+  width: 100%;
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.address-book__list {
+  list-style: none;
+}
+
+.address-book__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.address-book-card__letter {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px 13px;
+  color: var(--c-title);
+  background-color: var(--c-main);
+  font-size: var(--font-sizing-card);
+}
+
+.address-book-card__letter:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.address-book-card__list {
+  padding-left: 13px;
+  list-style: none;
+  font-size: var(--font-sizing-list);
+}
