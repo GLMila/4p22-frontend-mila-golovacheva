@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Form</title>
+</head>
+<body>
+  <main class="content">
+    <div class="content__inner container">
+      <form class="content__form" action="/action_page.html">
+        <h1 class="content-form__heading">Вход</h1>
+        <div class="content-form__container">
+          <label class="content-form-container__label" for="email">Email</label>
+          <input class="content-form-container__imput" id="email" name="email" type="email" placeholder="Введите email">
+        </div>
+        <div class="content-form__container">
+          <label class="content-form-container__label" for="password">Пароль</label>
+          <input class="content-form-container__imput" id="password" name="password" type="password" placeholder="Введите пароль">
+        </div>
+        <div class="content-form__check container">
+          <input class="content-form-check__box" id="checkbox" name="check"  type="checkbox">
+          <div class="content-form-check__newbox"></div>
+          <label class="content-form-check__label" for="checkbox">Я согласен получать обновления на почту</label>
+        </div>
+        <div class="content-form__button">
+          <button class="content-form__enter">Войти</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
