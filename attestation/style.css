@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
+       url('./fonts/Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Bold.woff2') format('woff2'),
+       url('./fonts/Roboto-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --c-dark: #787878;
+  --c-light: #FFFFFF;
+  --c-main: #1A226B;
+  --c-gray: #CCCCCC;
+  --base-font-family: 'Roboto', sans-serif;
+  --base-font-size: 28px;
+  --base-font-weight: 400;
+  --base-line-height: 1.3;
+  --border: 2px solid var(--c-dark);
+  --box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.25);
+  --box-shadow-2: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --input-height: 50px;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+  align-items: center;
+  padding: 12px 30px;
+  box-shadow: var(--box-shadow-2);
+  background-color: var(--c-light);
+}
+
+.header-logo__img {
+  width: 100%;
+  max-width: 222px;
+}
+
+.header__text {
+  justify-content: flex-start;
+  font-size: 36px;
+  color: var(--c-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header__link {
+  grid-column-start: 4;
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+}
+
+a {
+  font-size: 24px;
+  color: var(--c-dark);
+  font-weight: 700;
+  font-family: Roboto;
+  text-decoration: none;
+}
+
+a:hover,
+a:visited {
+  color: var(--c-main);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 15px;
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+  color: var(--c-light);
+  background-color: var(--c-light);
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+}
+
+input:active {
+  border-color: var(--c-dark);
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  padding: 26px 45px 37px;
+  color: var(--c-dark);
+  background-color: var(--c-light);
+  box-shadow: var(--box-shadow);
+}
+
+.form__header,
+.form__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__header:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.form__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.form__button {
+  margin-top: 52px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input__label {
+  margin-bottom: 3px;
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.input__control {
+  --paddingX: 15px;
+  width: 100%;
+  height: var(--input-height);
+  padding-left: var(--paddingX);
+  padding-right: var(--paddingX);
+  font-weight: 700;
+  border: var(--border);
+}
+
+.input__control::placeholder {
+  color: var(--c-gray);
+}
+
+.input__control:hover {
+  border-color: var(--c-main);
+}
+
+.button {
+  --paddingX: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 180px;
+  height: var(--input-height);
+  padding-left: var(--paddingX);
+  padding-right: var(--paddingX);
+  font-weight: 700;
+  color: var(--c-light);
+  background-color: var(--c-main);
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .form {
+    min-height: 875px;
+  }  
+  .header {
+    padding: 12px 20px;
+  }
+    
+  .header-logo__img {
+    max-width: 124px;
+  }
+
+  /* не смогла придумать, как вместить все компоненты при 360px, кроме как уменьшением текста */
+  .header__text {
+    font-size: calc(24/ 768 * 100vw);
+    padding-left: 10px;
+  }
+
+  a {
+    font-size: 16px;
+  }  
+}
