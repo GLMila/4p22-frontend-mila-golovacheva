@@ -1,30 +1,31 @@
-'use strict';
-
 const num1 = document.querySelector('[data-js-number1-input]');
 const num2 = document.querySelector('[data-js-number2-input]');
 const symbolInput = document.querySelector('[data-js-operation-input]');
-const result = document.querySelector('[data-js-button-input]');
+const resultButton = document.querySelector('[data-js-result-button]');
 
-result.addEventListener('click', event => {
+resultButton.addEventListener('click', event => {
   event.preventDefault();
 
-  const isEmpty1 = num1.value.trim().length === 0;
-  const number1 = Number(num1.value.trim());
-  const isNotNumber1 = isNaN(number1);
+  const firstNumberValue= num1.value.trim();
+  const isFirstNumberEmpty = firstNumberValue.length === 0;
+  const firstNumber = Number(firstNumberValue);
+  const isFirstNumberNotNumber = isNaN(firstNumber);
 
-  const isEmpty2 = num2.value.trim().length === 0;
-  const number2 = Number(num2.value.trim());
-  const isNotNumber2 = isNaN(number2);
+  const secondNumberValue = num2.value.trim()
+  const isSecondNumberEmpty = secondNumberValue.length === 0;
+  const secondNumber = Number(secondNumberValue);
+  const isSecondNumberNotNumber = isNaN(secondNumber);
 
-  const isEmptySymbol = symbolInput.value.trim().length === 0;
-  const symbol = symbolInput.value.trim();
+  const symbolValue= symbolInput.value.trim();
+  const isEmptySymbol = symbolValue.length === 0;
+  const symbol = symbolValue;
 
-  if (isNotNumber1 || isNotNumber2) {
+  if (isFirstNumberNotNumber || isSecondNumberNotNumber) {
     alert('Некорректный ввод чисел');
     return;
   }
   
-  if (isEmpty1) {
+  if (isFirstNumberEmpty) {
       alert('Первое число не указано');
       return;
   }
@@ -34,21 +35,21 @@ result.addEventListener('click', event => {
     return;
   }
   
-  if (isEmpty2) {
+  if (isSecondNumberEmpty) {
     alert('Второе число не указано');
     return;
   }
  
-  if (symbol === '/' && number2 === 0) {
+  if (symbol === '/' && secondNumber === 0) {
     alert('Операция некорректна');
     return
   }
   
   switch (symbol) {
-    case '+': alert(number1 + number2); break;
-    case '-': alert(number1 - number2); break;
-    case '*': alert(number1 * number2); break;
-    case '/': aleert(number1/number2); break;
+    case '+': alert(firstNumber + secondNumber); break;
+    case '-': alert(firstNumber - secondNumber); break;
+    case '*': alert(firstNumber * secondNumber); break;
+    case '/': alert(firstNumber / secondNumber); break;
     default: alert('Программа не поддерживает такую операцию');
   } 
 })
