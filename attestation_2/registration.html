@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Регистрация</title>
+</head>
+<body>
+  <header class="header">
+    <a class="header__logo" href="/" title="Перейти на главную страницу">
+      <div class="header__logo-img">
+        <img src="logo.png" loading="lazy" alt="logo">
+      </div>
+      <div class="header__text">
+        <p>PCS Frontend</p>
+      </div>
+    </a>
+    <div class="header__actions">
+      <a class="header__actions-link header__actions-link--active" href="registration.html">Регистрация</a>
+      <a class="header__actions-link header__actions-link--active" href="formsubmit.html">Вход</a>
+    </div>
+  </header>
+  <main>
+    <form class="form" data-js-form>
+      <div class="form__header">
+        <h1 class="form__title">Регистрация</h1>
+      </div>
+      <div class="form__content">
+        <div class="form__item">
+          <div class="input">
+            <div class="input__container">
+              <label class="input__label" for="email">* Email</label>
+              <div class="input__error" id="email-error"></div>
+            </div>
+            <input class="input__control" 
+                id="email" 
+                name="email" 
+                type="email"
+                placeholder="Введите email"
+                data-js-email-input
+            >
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="input">
+            <div class="input__container">
+              <label class="input__label" for="password">* Пароль</label>
+              <div class="input__error" id="password-error"></div>
+            </div>
+            <input class="input__control" 
+                  id="password" 
+                  name="password" 
+                  type="password"
+                  placeholder="Введите пароль"
+                  data-js-password-input
+            >
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="input">
+            <div class="input__container">
+              <label class="input__label" for="confirm-password">* Подтверждение пароля</label>
+              <div class="input__error" id="confirm-error"></div>
+            </div>
+            <input class="input__control" 
+                  id="confirm-password" 
+                  name="confirm-password" 
+                  type="password"
+                  placeholder="Подтвердите пароль"
+                  data-js-confirm-input
+            >
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="input">
+            <p class="input__label">Пол</p>
+            <label class="radiobox" for="radio-1">
+              <input class="radiobox__input visually-hidden" id="radio-1" type="radio" name="gender" value="men">
+              <span class="radiobox__emulator"></span>
+              <span class="input__label">Мужчина</span>
+            </label>
+            <label class="radiobox" for="radio-2">
+              <input class="radiobox__input visually-hidden" id="radio-2" type="radio" name="gender" value="women">
+              <span class="radiobox__emulator"></span>
+              <span class="input__label">Женщина</span>
+            </label>
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="input">
+            <label class="input__label" for="textarea">О себе</label>
+            <textarea class="input__textarea" id="textarea" name="textarea" placeholder="Расскажите о себе..."></textarea>
+          </div>
+        </div>
+        <div class="form__item">
+          <label class="checkbox">
+            <input class="checkbox__input visually-hidden" type="checkbox" name="subscribe-agreement">
+            <span class="checkbox__emulator"></span>
+            <span class="checkbox__label">Я согласен получать обновления на почту</span>
+          </label>
+        </div>
+        <div class="form__button">
+          <button class="form__submit-button button" type="submit" data-js-result-button>
+            Регистрация
+          </button>
+        </div>
+      </div>  
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
